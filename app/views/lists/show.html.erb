@@ -1,6 +1,3 @@
-<div class="row d-flex justify-content-center flex-nowrap">
-  <p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list.id), class:"btn btn-success card-button" %></p>
-</div>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <h2 class="title-text"><%= @list.name %></h2>
@@ -10,6 +7,9 @@
       </li>
     </ul>
   </div>
+</div>
+<div class="row d-flex justify-content-center flex-nowrap">
+  <p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list.id), class:"btn btn-success card-button" %></p>
 </div>
 
 <div class="row d-flex justify-content-center flex-nowrap">
