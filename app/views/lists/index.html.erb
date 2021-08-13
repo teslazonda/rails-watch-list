@@ -1,0 +1,9 @@
+<h1>Lists</h1>
+<ul class="list-unstyled">
+  <% @lists.each do |list| %>
+    <div class="d-flex">
+      <li><%= list.name %></li>
+      <li class="btn btn-warning"><%= link_to 'Show', list_path(list)%></li>
+    </div>
+    <% end %>
+</ul>
