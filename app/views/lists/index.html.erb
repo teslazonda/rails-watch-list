@@ -1,10 +1,18 @@
-<h1>Lists</h1>
-<%= link_to 'Make a new list', new_list_path, class: 'btn btn-primary'%>
-<ul class="list-unstyled">
-  <% @lists.each do |list| %>
-    <div class="d-flex">
-      <li><%= list.name %></li>
-      <li class="btn btn-warning"><%= link_to 'Show', list_path(list)%></li>
-    </div>
+<div class="container">
+  <h1 class="title-text">Check out our movies!</h1>
+  <div class="row d-flex justify-content-center flex-nowrap">
+    <p><%= link_to 'Make a new list', new_list_path, class: 'btn btn-primary text-center'%></p>
+  </div>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://www.pptgrounds.com/wp-content/uploads/2012/08/Blue-movie-film-strip-backgrounds.jpg')  %>)">
+
+        <div class="d-flex">
+          <p class="card-text"><%= list.name %></p>
+          <%= link_to 'Show', list_path(list), class:"btn btn-warning card-button"%>
+        </div>
+      </div>
     <% end %>
-</ul>
+  </div>
+</div>

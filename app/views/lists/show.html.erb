@@ -1,7 +1,6 @@
 <h2><%= @list.name %></h2>
 <p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list.id) %></p>
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-
+<%=@list.photo.attached? ? cl_image_tag(@list.photo.key, height: 300, width: 400, crop: :fill) : image_tag('https://www.pptgrounds.com/wp-content/uploads/2012/08/Blue-movie-film-strip-backgrounds.jpg')  %>
 <% @list.movies.each do |movie| %>
  <div class="card-product">
   <%= image_tag movie.poster_url  %>
