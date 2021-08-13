@@ -1,8 +1,10 @@
-<h2><%= @list.name %></h2>
-<p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list.id) %></p>
+<h2 class="title-text"><%= @list.name %></h2>
+<div class="row d-flex justify-content-center flex-nowrap">
+  <p><%= link_to 'Create a bookmark', new_list_bookmark_path(@list.id), class:"btn btn-success card-button" %></p>
+</div>
 <%=@list.photo.attached? ? cl_image_tag(@list.photo.key, height: 300, width: 400, crop: :fill) : image_tag('https://www.pptgrounds.com/wp-content/uploads/2012/08/Blue-movie-film-strip-backgrounds.jpg')  %>
 <% @list.movies.each do |movie| %>
- <div class="card-product">
+ <div class="card-product m-2">
   <%= image_tag movie.poster_url  %>
   <div class="card-product-infos">
     <h2><%= movie.title %> </h2><br>
