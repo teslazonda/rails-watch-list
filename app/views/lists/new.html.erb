@@ -1,4 +1,13 @@
-<h1>New List</h1>
+<div class="background-color">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <a class="navbar-brand text-white" href="/lists" style="">
+      <i class="fas fa-ticket-alt">
+      </i>
+  </a>
 
-<%= render 'form', list: @list %>
-<%= link_to 'Back', lists_path %>
+  </div>
+  <h1 class="font-weight-bold">Make a new list</h1>
+
+  <p class=""><%= render 'form', list: @list %></p>
+  <p class="btn btn-warning text-white m-3"><%= link_to 'Back', lists_path %></p>
+</div>
